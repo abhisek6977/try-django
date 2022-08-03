@@ -8,6 +8,8 @@ from django.http import HttpResponse
 
 def home_view(request):
 
+    #from database
+
     name = "abhisek"
     number = random.randint(10, 1233123)
     H1_STRING = f"""
