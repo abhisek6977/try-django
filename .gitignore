@@ -19,6 +19,10 @@ lib64/
 parts/
 sdist/
 var/
+bin/
+lib/
+include/
+pyvenv*
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
