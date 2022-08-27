@@ -1,6 +1,6 @@
 from django.db import models
 
 # Create your models here.
-class Artical(models.Model):
+class Article(models.Model):
     title = models.TextField()
     content = models.TextField()

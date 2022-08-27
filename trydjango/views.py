@@ -3,26 +3,28 @@ To render html web pages
 '''
 import random
 from django.http import HttpResponse
-from articals.models import Artical
+from articles.models import Article
 from django.template.loader import render_to_string, get_template
 
 
-def home_view(request):
+def home_view(request, *args, **kwargs):
 
     #from database
+    print(args, kwargs)
 
     name = "abhisek"
     random_id = random.randint(1, 3)
-    artical_obj = Artical.objects.get(id=random_id)
-    artical_qs = Artical.objects.all()
+    article_obj = Article.objects.get(id=random_id)
+    article_qs = Article.objects.all()
 
-    my_list = artical_qs #[123, 12 , 34 , 65, 76]
+    my_list = article_qs #[123, 12 , 34 , 65, 76]
 
     context = {
         'object_list': my_list,
-        'title': artical_obj.title,
-        'id': artical_obj.id,
-        'content': artical_obj.content
+        'object': article_obj,
+        'title': article_obj.title,
+        'id': article_obj.id,
+        'content': article_obj.content
     }
 
     # handly when you need to use same template but multiple context
