@@ -7,8 +7,9 @@
 
 <ul>
     {% for x in object_list %}
+
     {% if x.title %}
-    <li> {{x.title}} - {{x.content}} </li>
+    <li> <a href="/articals/{{ x.id }}/">{{ x.title }} - {{ x.content }}</a></li>
     {% endif %}
 
     {% endfor %}
